@@ -6,7 +6,7 @@
 
 int is_div(int num, int *div, int size){
 	int i;
-	for (i = 0; i < size; size++){
+	for (i = 0; i < size; i++){
 		if ( num % div[i] == 0 ){
 			return 1;
 		}
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 /* If there are no divisors, just print the numbers */
 
 	if (divCount == 0){
-		for (i = a; i < b; i++){
+		for (i = a; i < b; ++i){
 			printf("%d ", i);
 		}
 		printf("%d\n", b);
@@ -41,20 +41,22 @@ int main(int argc, char *argv[]){
 
 /* Fill divisors in array */
 
-	for (i = 0; i < divCount; i++){
+	for (i = 0; i < divCount; ++i){
 		divisors[i] = atoi(argv[i + 3]);
 	}
 
 /* Go through given interval and print accepted values */
-	for (i = a; i < b; i++) {
-        if (!is_div(i, divisors, divCount)) {
+	for (i = a; i < b; ++i) {
+      if (!is_div(i, divisors, divCount)) {
+	  /*if(1) {*/
 			if (printed) {printf(" ");}
             printf("%d", i);
 			++printed;
         }
     }
 
-	if (!is_div(b, divisors, divCount)){
+	  if (!is_div(i, divisors, divCount)) { 
+	/* if(1){ */
 			if (printed) {printf(" ");}
 			printf("%d\n", b);
 		} else if (printed) {
