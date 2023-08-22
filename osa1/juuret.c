@@ -4,16 +4,16 @@
 #include <math.h>
 
 int main(int argc, char *argv[]){
-    int orgCount = argc - 2;
-	int *org;
-    int i;
-
-    org = (double*) malloc (orgCount*sizeof(double));    
+    double nelioitava;
+    double tulos;
+    int i;   
     
-    for (i = 0; i < orgCount; i++){
-        org[i]=argv[i+2];
+    for (i = 2; i < argc; i++){
+        nelioitava=atof(argv[i]);
+        tulos = sqrt(nelioitava);
+        printf("sqrt(%.*f) = %.*f\n", atoi(argv[1]), nelioitava, atoi(argv[1]), tulos); 
     }
 
-    printf("sqrt(%.$argv[1]f) = %.$argv[1]f", nelioitava, tulos ); /* tätä looppiin, toimiiko $argv[1]?*/
+    /* tätä looppiin, toimiiko $argv[1]?*/
     return 0;
 }
