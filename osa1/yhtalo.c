@@ -3,6 +3,14 @@
 #include <string.h>
 #include <math.h>
 
+int pituus(char *mjono){
+    int pit = 0;
+    while(mjono[pit] != '\0'){
+        pit++;
+    }
+    return pit;
+}
+
 int main(int argc, char *argv[]){
         double a, b, c, juuret, ekaJuuri, tokaJuuri;
 
@@ -10,6 +18,8 @@ int main(int argc, char *argv[]){
         b = atof(argv[2]);
         c = atof(argv[3]);
         /*selvitetään juurten määrä*/
+        
+        
         juuret = b*b-4*a*c;
 
         if (juuret < 0){
@@ -20,8 +30,8 @@ int main(int argc, char *argv[]){
             printf("%.3f\n", ekaJuuri);
             return 0;
         } else {
-            tokaJuuri = (-b + sqrt(b*b-4*a*c))/2*a;
-            ekaJuuri = (-b - sqrt(b*b-4*a*c))/2*a;
+            tokaJuuri = (-b + sqrt(b*b-4*a*c))/(2*a);
+            ekaJuuri = (-b - sqrt(b*b-4*a*c))/(2*a);
             printf("%.3f %.3f\n", ekaJuuri, tokaJuuri);
             return 0;
         }
